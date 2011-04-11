@@ -1,0 +1,3 @@
+[submodule "hackemup"]
+	path = hackemup
+	url = git://github.com/mrspeaker/HackemUp.git

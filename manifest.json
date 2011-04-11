@@ -1,0 +1,11 @@
+{
+    "name": "HackemUp",
+    "version": "1.0",
+    "description": "Keep track of what's changed on Hacker News front page since the last time you looked",
+    "content_scripts": [
+        {
+            "matches": ["http://news.ycombinator.com/"],
+            "js": ["init.js"]
+        }
+    ]
+}
