@@ -2,6 +2,11 @@
     "name": "HackemUp",
     "version": "1.0",
     "description": "Keep track of what's changed on Hacker News front page since the last time you looked",
+    "icons": {
+        "16": "icon16.png",
+        "48": "icon48.png",
+        "128": "icon128.png"
+    },
     "content_scripts": [
         {
             "matches": ["http://news.ycombinator.com/"],
