@@ -11,4 +11,11 @@
     // Inject
     head.appendChild(hnuBaseScript);
     head.appendChild(hackemScript);
+    
+    // Bind all links in the main content to open in a new tab. Have to use this
+    // (somewhat weird) live click event handler as HackemUp replaces the page
+    // content each time it refreshes
+    $('tbody tr:eq(3) a').live('click', function(){
+        $(this).attr('target', '_blank');
+    });
 })();
