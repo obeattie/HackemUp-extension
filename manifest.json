@@ -1,7 +1,8 @@
 {
     "name": "HackemUp",
-    "version": "1.1",
+    "version": "1.2",
     "description": "Keep track of what's changed on Hacker News front page since the last time you looked",
+    "manifest_version": 2,
     "icons": {
         "16": "icon16.png",
         "48": "icon48.png",
@@ -10,10 +11,13 @@
     "content_scripts": [
         {
             "matches": [
-                "http://news.ycombinator.com/",
-                "http://news.ycombinator.com/news"
+                "*://news.ycombinator.com/",
+                "*://news.ycombinator.com/news"
             ],
-            "js": ["jquery.js", "init.js"]
+            "js": [
+                "zepto.min.js",
+                "init.js"
+            ]
         }
     ]
 }

@@ -1,6 +1,6 @@
 (function() {
     // Setup the scripts
-    window.hnuBase = 'https://github.com/mrspeaker/HackemUp/raw/master/';
+    window.hnuBase = 'https://raw.github.com/mrspeaker/HackemUp/master/';
     var head = document.getElementsByTagName('head')[0],
         hackemScript = document.createElement('script'),
         hnuBaseScript = document.createElement('script');
@@ -15,7 +15,15 @@
     // Bind all links in the main content to open in a new tab. Have to use this
     // (somewhat weird) live click event handler as HackemUp replaces the page
     // content each time it refreshes
-    $('tbody tr:eq(3) a').live('click', function(){
-        $(this).attr('target', '_blank');
+    Zepto(function($){
+        $(document.body).on('click', 'a', function(event){
+            var anchor = $(this);
+            if (anchor.attr('href').match(/^https?:\/\//)) {
+                anchor.attr('target', '_blank');
+            } else {
+                anchor.removeAttr('target');
+            }
+            event.stopPropagation(); // Ugh, HackEmUp does this too if we don't disable
+        });
     });
 })();
